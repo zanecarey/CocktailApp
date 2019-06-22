@@ -1,5 +1,6 @@
 package zane.carey.cocktailapp
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -23,12 +24,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val searchBtn = findViewById(R.id.find_cocktail_btn) as Button
+        val browseBtn = findViewById(R.id.browse_btn) as Button
         nametextView = findViewById(R.id.name_textview) as TextView
         detailsTextView = findViewById(R.id.details_textView) as TextView
 
         searchBtn.setOnClickListener {
             //launch alert dialog
-            val builder = AlertDialog.Builder(this, R.style.AlertDialog_AppCompat)
+            val builder = AlertDialog.Builder(this)
             builder.setTitle("Enter Drink")
 
             val editText = EditText(this)
@@ -51,8 +53,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            builder.show()
+            val dialog = builder.create()
+            dialog.show()
 
+        }
+
+        browseBtn.setOnClickListener{
+            //launch classics activity
+            val intent = Intent(this, ClassicsActivity::class.java)
+            startActivity(intent)
         }
     }
 }
