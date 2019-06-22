@@ -9,8 +9,8 @@ import android.support.v7.widget.RecyclerView
 private lateinit var linearLayoutManager : LinearLayoutManager
 private lateinit var recyclerView: RecyclerView
 private lateinit var adapter: DrinkAdapter
-private lateinit var drinks: ArrayList<String>
-private lateinit var drinkPics: ArrayList<String>
+private var drinks = ArrayList<Drink>()
+
 
 class ClassicsActivity : AppCompatActivity() {
 
@@ -21,8 +21,9 @@ class ClassicsActivity : AppCompatActivity() {
         linearLayoutManager = LinearLayoutManager(this)
         recyclerView = findViewById(R.id.classicsRecyclerView) as RecyclerView
 
-        drinks.add("Margarita")
-        drinks.add("Old Fashioned")
-        drinks.add("White Russian")
+        drinks.add(Drink("Margarita", "https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg"))
+        adapter = DrinkAdapter(drinks, this)
+        recyclerView.setAdapter(adapter)
+        recyclerView.layoutManager = LinearLayoutManager(this)
     }
 }
