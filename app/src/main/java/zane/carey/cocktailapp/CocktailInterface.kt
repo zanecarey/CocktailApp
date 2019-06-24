@@ -35,6 +35,6 @@ data class Drinks(
     val strIngredient4: String,
     @SerializedName("strInstructions")
     val strInstructions: String,
-    @SerializedName("strInstructions")
+    @SerializedName("strDrinkThumb")
     val strDrinkThumb: String
 )

@@ -23,12 +23,12 @@ class DrinkAdapter(val drinks: ArrayList<Drink>, val context: Context) : Recycle
         Glide.with(context)
             .asBitmap()
             .load(drinks[p1].drinkPic)
-            .into(p0.drinkPic)
+            .into(p0.drinkPicture)
     }
 
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         val drinkName = view.drinkName
-        val drinkPic = view.drinkPic
+        val drinkPicture = view.drinkPic
     }
 }
 
