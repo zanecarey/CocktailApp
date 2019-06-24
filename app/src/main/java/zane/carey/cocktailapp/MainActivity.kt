@@ -39,18 +39,21 @@ class MainActivity : AppCompatActivity() {
             builder.setPositiveButton("Ok") { dialog, which ->
 
                 val drink = editText.text.toString()
-
+                //launch display activity
+                val intent = Intent(this, DrinkDisplayActivity::class.java)
+                intent.putExtra("drinkName", drink)
+                startActivity(intent)
                 //retrieve info
 
-                myJob = CoroutineScope(Dispatchers.IO).launch {
-                    val request = api.getDrinks(drink).await()
-                    val response = request.drinks?.get(0)
-                    withContext(Dispatchers.Main) {
-                        //do something with result
-                        nametextView.text = response.strDrink
-                        detailsTextView.text = response.strInstructions
-                    }
-                }
+//                myJob = CoroutineScope(Dispatchers.IO).launch {
+//                    val request = api.getDrinks(drink).await()
+//                    val response = request.drinks?.get(0)
+//                    withContext(Dispatchers.Main) {
+//                        //do something with result
+//                        nametextView.text = response.strDrink
+//                        detailsTextView.text = response.strInstructions
+//                    }
+//                }
             }
 
             val dialog = builder.create()
