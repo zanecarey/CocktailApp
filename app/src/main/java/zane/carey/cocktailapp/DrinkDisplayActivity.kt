@@ -2,6 +2,8 @@ package zane.carey.cocktailapp
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
+import android.support.v7.widget.CardView
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
@@ -16,6 +18,9 @@ lateinit var drinkNameTextView: TextView
 lateinit var ing1: TextView
 lateinit var ing2: TextView
 lateinit var ing3: TextView
+lateinit var ingr1CardView: CardView
+lateinit var ingr2CardView: CardView
+lateinit var ingr3CardView: CardView
 var ingredient1 = ""
 var ingredient2 = ""
 var ingredient3 = ""
@@ -39,8 +44,31 @@ class DrinkDisplayActivity : AppCompatActivity() {
         ing2 = findViewById(R.id.ingredient2)
         ing3 = findViewById(R.id.ingredient3)
 
+        ingr1CardView = findViewById(R.id.ing1CardView)
+        ingr2CardView = findViewById(R.id.ing2CardView)
+        ingr3CardView = findViewById(R.id.ing3CardView)
+
         drink = getDrink()
         retreiveInfo(drink)
+
+        ingr1CardView.setOnClickListener {
+
+
+            //alert dialog
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle(ingredient1)
+
+            val textView = TextView(this)
+            textView.text = ingr1Description
+            builder.setView(textView)
+
+            builder.setPositiveButton("Ok") { dialog, which ->
+
+            }
+            val dialog = builder.create()
+            dialog.show()
+        }
+
 
     }
 
@@ -69,7 +97,7 @@ class DrinkDisplayActivity : AppCompatActivity() {
 
                 drinkNameTextView.text = response.strDrink
                 //ing1.text = ingredient1
-                ing1.text = response.strIngredient1
+                ing1.text = ingredient1
                 ing2.text = ingredient2
                 ing3.text = ingredient3
             }
@@ -83,6 +111,26 @@ class DrinkDisplayActivity : AppCompatActivity() {
 
                 }
             }
+
+//            val jobIng2 = CoroutineScope(Dispatchers.IO).launch {
+//                val request = api.getIngredient(ingredient2).await()
+//                val response = request.ingredients?.get(0)
+//                withContext(Dispatchers.Main){
+//
+//                    ingr2Description = response.strDescription
+//
+//                }
+//            }
+//
+//            val jobIng3 = CoroutineScope(Dispatchers.IO).launch {
+//                val request = api.getIngredient(ingredient3).await()
+//                val response = request.ingredients?.get(0)
+//                withContext(Dispatchers.Main){
+//
+//                    ingr3Description = response.strDescription
+//
+//                }
+//            }
         }
 
 
