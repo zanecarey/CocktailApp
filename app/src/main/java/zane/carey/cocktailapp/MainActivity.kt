@@ -12,7 +12,7 @@ import kotlinx.coroutines.*
 import retrofit2.await
 import retrofit2.awaitResponse
 
-val api = RestApi()
+
 lateinit var nametextView: TextView
 lateinit var detailsTextView: TextView
 private var myJob: Job? = null
@@ -25,8 +25,6 @@ class MainActivity : AppCompatActivity() {
 
         val searchBtn = findViewById(R.id.find_cocktail_btn) as Button
         val browseBtn = findViewById(R.id.browse_btn) as Button
-        nametextView = findViewById(R.id.name_textview) as TextView
-        detailsTextView = findViewById(R.id.details_textView) as TextView
 
         searchBtn.setOnClickListener {
             //launch alert dialog
