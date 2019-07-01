@@ -31,7 +31,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textSize="48sp"/>
+                        android:textSize="48sp"
+                        android:textColor="#000"/>
                 <ImageView
                         android:id="@+id/drinkImage"
                         android:layout_width="240dp"
@@ -53,17 +54,19 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
                             <TextView
-                                    android:text="Description"
+                                    android:text="Instructions"
                                     android:textSize="36sp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"/>
+                                    android:layout_gravity="center"
+                                    android:textColor="#000"/>
                             <TextView
-                                    android:id="@+id/description"
+                                    android:id="@+id/instructions"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:padding="4dp"
                                     android:textSize="18sp"
+                                    android:textColor="#000"
                             />
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
@@ -83,7 +86,8 @@
                                 android:textSize="36sp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"/>
+                                android:layout_gravity="center"
+                                android:textColor="#000"/>
 
                         <LinearLayout
                                 android:layout_width="match_parent"
@@ -93,14 +97,16 @@
                                     android:id="@+id/ing1CardView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="4dp">
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
 
                                 <TextView
                                         android:id="@+id/ingredient1"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:textSize="24sp"
-                                        android:layout_gravity="center"/>
+                                        android:layout_gravity="center"
+                                        android:textColor="#000"/>
 
 
                             </android.support.v7.widget.CardView>
@@ -109,13 +115,15 @@
                                     android:id="@+id/ing2CardView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="4dp">
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
 
                                     <TextView
                                             android:id="@+id/ingredient2"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:textSize="18sp"/>
+                                            android:textSize="24sp"
+                                            android:textColor="#000"/>
 
                             </android.support.v7.widget.CardView>
 
@@ -123,15 +131,210 @@
                                     android:id="@+id/ing3CardView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="4dp">
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
 
                                     <TextView
                                             android:id="@+id/ingredient3"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:textSize="18sp"/>
+                                            android:textSize="24sp"
+                                            android:textColor="#000"/>
 
                             </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing4CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing5CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing6CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing7CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing8CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient8"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing9CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient9"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing10CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient10"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing11CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient11"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing12CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient12"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing13CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient13"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing14CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient14"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                    android:id="@+id/ing15CardView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="4dp"
+                                    android:layout_gravity="center">
+
+                                <TextView
+                                        android:id="@+id/ingredient15"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="24sp"
+                                        android:textColor="#000"/>
+
+                            </android.support.v7.widget.CardView>
+
                         </LinearLayout>
                     </LinearLayout>
 
