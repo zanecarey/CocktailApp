@@ -206,17 +206,18 @@ class DrinkDisplayActivity : AppCompatActivity() {
                 ing14.text = ingredient14 + " - " + measure14
                 ing15.text = ingredient15 + " - " + measure15
             }
-        }.invokeOnCompletion {
-            val jobIng1 = CoroutineScope(Dispatchers.IO).launch {
-                val request = api.getIngredient(ingredient1).await()
-                val response = request.ingredients?.get(0)
-                withContext(Dispatchers.Main){
-
-                    ingr1Description = response.strDescription
-
-                }
-            }
-
+        }
+//            .invokeOnCompletion {
+//            val jobIng1 = CoroutineScope(Dispatchers.IO).launch {
+//                val request = api.getIngredient(ingredient1).await()
+//                val response = request.ingredients?.get(0)
+//                withContext(Dispatchers.Main){
+//
+//                    ingr1Description = response.strDescription
+//
+//                }
+//            }
+//
 //            val jobIng2 = CoroutineScope(Dispatchers.IO).launch {
 //                val request = api.getIngredient(ingredient2).await()
 //                val response = request.ingredients?.get(0)
@@ -236,7 +237,7 @@ class DrinkDisplayActivity : AppCompatActivity() {
 //
 //                }
 //            }
-        }
+//        }
 
 
 

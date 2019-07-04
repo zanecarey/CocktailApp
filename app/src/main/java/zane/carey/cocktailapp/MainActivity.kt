@@ -1,9 +1,13 @@
 package zane.carey.cocktailapp
 
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import android.support.v7.widget.CardView
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -23,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val searchBtn = findViewById(R.id.find_cocktail_btn) as Button
-        val browseBtn = findViewById(R.id.browse_btn) as Button
+        val searchBtn = findViewById(R.id.find_cocktail_cardview) as CardView
+        val browseBtn = findViewById(R.id.browse_cardview) as CardView
 
         searchBtn.setOnClickListener {
             //launch alert dialog
@@ -32,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             builder.setTitle("Enter Drink")
 
             val editText = EditText(this)
+
             builder.setView(editText)
 
             builder.setPositiveButton("Ok") { dialog, which ->
@@ -64,6 +69,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ClassicsActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
     }
 }
 
