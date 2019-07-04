@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.CardView
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
@@ -33,6 +34,18 @@ lateinit var ing15: TextView
 lateinit var ingr1CardView: CardView
 lateinit var ingr2CardView: CardView
 lateinit var ingr3CardView: CardView
+lateinit var ingr4CardView: CardView
+lateinit var ingr5CardView: CardView
+lateinit var ingr6CardView: CardView
+lateinit var ingr7CardView: CardView
+lateinit var ingr8CardView: CardView
+lateinit var ingr9CardView: CardView
+lateinit var ingr10CardView: CardView
+lateinit var ingr11CardView: CardView
+lateinit var ingr12CardView: CardView
+lateinit var ingr13CardView: CardView
+lateinit var ingr14CardView: CardView
+lateinit var ingr15CardView: CardView
 var ingredient1 = ""
 var ingredient2 = ""
 var ingredient3 = ""
@@ -48,21 +61,6 @@ var ingredient12 = ""
 var ingredient13 = ""
 var ingredient14 = ""
 var ingredient15 = ""
-var ingr1Description = ""
-var ingr2Description = ""
-var ingr3Description = ""
-var ingr4Description = ""
-var ingr5Description = ""
-var ingr6Description = ""
-var ingr7Description = ""
-var ingr8Description = ""
-var ingr9Description = ""
-var ingr10Description = ""
-var ingr11Description = ""
-var ingr12Description = ""
-var ingr13Description = ""
-var ingr14Description = ""
-var ingr15Description = ""
 var measure1 = ""
 var measure2 = ""
 var measure3 = ""
@@ -110,28 +108,22 @@ class DrinkDisplayActivity : AppCompatActivity() {
         ingr1CardView = findViewById(R.id.ing1CardView)
         ingr2CardView = findViewById(R.id.ing2CardView)
         ingr3CardView = findViewById(R.id.ing3CardView)
+        ingr4CardView = findViewById(R.id.ing4CardView)
+        ingr5CardView = findViewById(R.id.ing5CardView)
+        ingr6CardView = findViewById(R.id.ing6CardView)
+        ingr7CardView = findViewById(R.id.ing7CardView)
+        ingr8CardView = findViewById(R.id.ing8CardView)
+        ingr9CardView = findViewById(R.id.ing9CardView)
+        ingr10CardView = findViewById(R.id.ing10CardView)
+        ingr11CardView = findViewById(R.id.ing11CardView)
+        ingr12CardView = findViewById(R.id.ing12CardView)
+        ingr13CardView = findViewById(R.id.ing13CardView)
+        ingr14CardView = findViewById(R.id.ing14CardView)
+        ingr15CardView = findViewById(R.id.ing15CardView)
 
         drink = getDrink()
+
         retreiveInfo(drink)
-
-        ingr1CardView.setOnClickListener {
-
-
-            //alert dialog
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle(ingredient1)
-
-            val textView = TextView(this)
-            textView.text = ingr1Description
-            builder.setView(textView)
-
-            builder.setPositiveButton("Ok") { dialog, which ->
-
-            }
-            val dialog = builder.create()
-            dialog.show()
-        }
-
 
     }
 
@@ -144,7 +136,13 @@ class DrinkDisplayActivity : AppCompatActivity() {
     fun retreiveInfo(drink : String) = runBlocking<Unit>{
 
         val job = CoroutineScope(Dispatchers.IO).launch {
-            val request = api.getDrinks(drink).await()
+            val request : Results
+            if(drink == "randomDrink"){
+                request = api.getRandom().await()
+            }
+            else {
+               request = api.getDrinks(drink).await()
+            }
             val response = request.drinks?.get(0)
             withContext(Dispatchers.Main) {
 
@@ -189,7 +187,54 @@ class DrinkDisplayActivity : AppCompatActivity() {
                     .into(drinkImage)
 
                 drinkNameTextView.text = response.strDrink
-                //ing1.text = ingredient1
+
+                if(ingredient1 == ""){
+                    ingr1CardView.visibility = View.GONE
+                }
+                if(ingredient2 == ""){
+                    ingr2CardView.visibility = View.GONE
+                }
+                if(ingredient3 == ""){
+                    ingr3CardView.visibility = View.GONE
+                }
+                if(ingredient4 == ""){
+                    ingr4CardView.visibility = View.GONE
+                }
+                if(ingredient5 == ""){
+                    ingr5CardView.visibility = View.GONE
+                }
+
+                if(ingredient6 == ""){
+                    ingr6CardView.visibility = View.GONE
+                }
+                if(ingredient7 == ""){
+                    ingr7CardView.visibility = View.GONE
+                }
+                if(ingredient8 == ""){
+                    ingr8CardView.visibility = View.GONE
+                }
+                if(ingredient9 == ""){
+                    ingr9CardView.visibility = View.GONE
+                }
+                if(ingredient10 == ""){
+                    ingr10CardView.visibility = View.GONE
+                }
+                if(ingredient11 == ""){
+                    ingr11CardView.visibility = View.GONE
+                }
+                if(ingredient12 == ""){
+                    ingr12CardView.visibility = View.GONE
+                }
+                if(ingredient13 == ""){
+                    ingr13CardView.visibility = View.GONE
+                }
+                if(ingredient14 == ""){
+                    ingr14CardView.visibility = View.GONE
+                }
+                if(ingredient15 == ""){
+                    ingr15CardView.visibility = View.GONE
+                }
+
                 ing1.text = ingredient1 + " - " + measure1
                 ing2.text = ingredient2 + " - " + measure2
                 ing3.text = ingredient3 + " - " + measure3
@@ -207,41 +252,5 @@ class DrinkDisplayActivity : AppCompatActivity() {
                 ing15.text = ingredient15 + " - " + measure15
             }
         }
-//            .invokeOnCompletion {
-//            val jobIng1 = CoroutineScope(Dispatchers.IO).launch {
-//                val request = api.getIngredient(ingredient1).await()
-//                val response = request.ingredients?.get(0)
-//                withContext(Dispatchers.Main){
-//
-//                    ingr1Description = response.strDescription
-//
-//                }
-//            }
-//
-//            val jobIng2 = CoroutineScope(Dispatchers.IO).launch {
-//                val request = api.getIngredient(ingredient2).await()
-//                val response = request.ingredients?.get(0)
-//                withContext(Dispatchers.Main){
-//
-//                    ingr2Description = response.strDescription
-//
-//                }
-//            }
-//
-//            val jobIng3 = CoroutineScope(Dispatchers.IO).launch {
-//                val request = api.getIngredient(ingredient3).await()
-//                val response = request.ingredients?.get(0)
-//                withContext(Dispatchers.Main){
-//
-//                    ingr3Description = response.strDescription
-//
-//                }
-//            }
-//        }
-
-
-
-
-
     }
 }

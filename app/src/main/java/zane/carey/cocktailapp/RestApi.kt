@@ -9,7 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RestApi{
     private val cocktailApi: CocktailApi
-    private val ingredientApi: IngredientInterface
+    private val randomApi: RandomApi
+
     init {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://www.thecocktaildb.com")
@@ -18,14 +19,15 @@ class RestApi{
             .build()
 
         cocktailApi = retrofit.create(CocktailApi::class.java)
-        ingredientApi = retrofit.create(IngredientInterface::class.java)
+        randomApi = retrofit.create(RandomApi::class.java)
     }
 
     fun getDrinks(drink: String) : Deferred<Results>{
         return cocktailApi.getData(drink)
     }
 
-    fun getIngredient(ingredient: String) : Deferred<IngrResults>{
-        return ingredientApi.getData(ingredient)
+    fun getRandom() : Deferred<Results>{
+        return randomApi.getRandom()
     }
+
 }

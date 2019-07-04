@@ -11,6 +11,11 @@ interface CocktailApi {
     fun getData(@Query("s") drink: String): Deferred<Results>
 }
 
+interface RandomApi {
+    @Headers("Content-Type: application/json")
+    @GET("/api/json/v1/1/random.php")
+    fun getRandom(): Deferred<Results>
+}
 data class Results(
     @SerializedName("drinks")
     val drinks: List<Drinks>

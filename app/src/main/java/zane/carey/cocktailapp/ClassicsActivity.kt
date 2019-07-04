@@ -36,6 +36,10 @@ class ClassicsActivity : AppCompatActivity() {
         drinks.add(Drink("Martini", replace("https:\\/\\/www.thecocktaildb.com\\/images\\/media\\/drink\\/71t8581504353095.jpg")))
         drinks.add(Drink("Mai Tai", replace("https:\\/\\/www.thecocktaildb.com\\/images\\/media\\/drink\\/twyrrp1439907470.jpg")))
         drinks.add(Drink("Sidecar", replace("https:\\/\\/www.thecocktaildb.com\\/images\\/media\\/drink\\/stwxuq1439906852.jpg")))
+        drinks.add(Drink("Long Island Iced Tea", replace("https:\\/\\/www.thecocktaildb.com\\/images\\/media\\/drink\\/wx7hsg1504370510.jpg")))
+        drinks.add(Drink("Mimosa", replace("https:\\/\\/www.thecocktaildb.com\\/images\\/media\\/drink\\/juhcuu1504370685.jpg")))
+        drinks.add(Drink("White Russian", replace("https:\\/\\/www.thecocktaildb.com\\/images\\/media\\/drink\\/vsrupw1472405732.jpg")))
+        drinks.add(Drink("Rob Roy", replace("https:\\/\\/www.thecocktaildb.com\\/images\\/media\\/drink\\/typuyq1439456976.jpg")))
 
         //non-alcoholic
         nonAlcoholicDrinks.add(Drink("Afterglow", "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg"))

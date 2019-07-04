@@ -29,7 +29,11 @@ class MainActivity : AppCompatActivity() {
 
         val searchBtn = findViewById(R.id.find_cocktail_cardview) as CardView
         val browseBtn = findViewById(R.id.browse_cardview) as CardView
+        val randBtn = findViewById(R.id.random_cardview) as CardView
+        val ingrBtn = findViewById(R.id.ingredient_cardview) as CardView
 
+
+        //SEARCH ON CLICK
         searchBtn.setOnClickListener {
             //launch alert dialog
             val builder = AlertDialog.Builder(this)
@@ -46,17 +50,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, DrinkDisplayActivity::class.java)
                 intent.putExtra("drinkName", drink)
                 startActivity(intent)
-                //retrieve info
 
-//                myJob = CoroutineScope(Dispatchers.IO).launch {
-//                    val request = api.getDrinks(drink).await()
-//                    val response = request.drinks?.get(0)
-//                    withContext(Dispatchers.Main) {
-//                        //do something with result
-//                        nametextView.text = response.strDrink
-//                        detailsTextView.text = response.strInstructions
-//                    }
-//                }
             }
 
             val dialog = builder.create()
@@ -64,12 +58,23 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        //BROWSE ON CLICK
         browseBtn.setOnClickListener{
             //launch classics activity
             val intent = Intent(this, ClassicsActivity::class.java)
             startActivity(intent)
         }
+
+        //RANDOM ONCLICK
+        randBtn.setOnClickListener{
+
+            //get random cocktail
+            val intent = Intent(this, DrinkDisplayActivity::class.java)
+            intent.putExtra("drinkName", "randomDrink" )
+            startActivity(intent)
+        }
     }
+
 
     fun View.hideKeyboard() {
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
