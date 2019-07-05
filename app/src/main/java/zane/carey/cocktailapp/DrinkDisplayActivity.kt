@@ -53,14 +53,14 @@ var ingredient4 = ""
 var ingredient5 = ""
 var ingredient6 = ""
 var ingredient7 = ""
-var ingredient8 = ""
-var ingredient9 = ""
-var ingredient10 = ""
-var ingredient11 = ""
-var ingredient12 = ""
-var ingredient13 = ""
-var ingredient14 = ""
-var ingredient15 = ""
+var ingredient8: String? = ""
+var ingredient9: String? = ""
+var ingredient10: String? = ""
+var ingredient11: String? = ""
+var ingredient12: String? = ""
+var ingredient13: String? = ""
+var ingredient14: String? = ""
+var ingredient15: String? = ""
 var measure1 = ""
 var measure2 = ""
 var measure3 = ""
@@ -68,14 +68,14 @@ var measure4 = ""
 var measure5 = ""
 var measure6 = ""
 var measure7 = ""
-var measure8 = ""
-var measure9 = ""
-var measure10 = ""
-var measure11 = ""
-var measure12 = ""
-var measure13 = ""
-var measure14 = ""
-var measure15 = ""
+var measure8: String? = ""
+var measure9: String? = ""
+var measure10: String? = ""
+var measure11: String? = ""
+var measure12: String? = ""
+var measure13: String? = ""
+var measure14: String? = ""
+var measure15: String? = ""
 
 val api = RestApi()
 
@@ -203,35 +203,34 @@ class DrinkDisplayActivity : AppCompatActivity() {
                 if(ingredient5 == ""){
                     ingr5CardView.visibility = View.GONE
                 }
-
                 if(ingredient6 == ""){
                     ingr6CardView.visibility = View.GONE
                 }
                 if(ingredient7 == ""){
                     ingr7CardView.visibility = View.GONE
                 }
-                if(ingredient8 == ""){
+                if(ingredient8 == "" || ingredient8 == null){
                     ingr8CardView.visibility = View.GONE
                 }
-                if(ingredient9 == ""){
+                if(ingredient9 == "" || ingredient9 == null){
                     ingr9CardView.visibility = View.GONE
                 }
-                if(ingredient10 == ""){
+                if(ingredient10 == ""|| ingredient10 == null){
                     ingr10CardView.visibility = View.GONE
                 }
-                if(ingredient11 == ""){
+                if(ingredient11 == "" || ingredient11 == null){
                     ingr11CardView.visibility = View.GONE
                 }
-                if(ingredient12 == ""){
+                if(ingredient12 == "" || ingredient12 == null){
                     ingr12CardView.visibility = View.GONE
                 }
-                if(ingredient13 == ""){
+                if(ingredient13 == "" || ingredient13 == null){
                     ingr13CardView.visibility = View.GONE
                 }
-                if(ingredient14 == ""){
+                if(ingredient14 == "" || ingredient14 == null){
                     ingr14CardView.visibility = View.GONE
                 }
-                if(ingredient15 == ""){
+                if(ingredient15 == "" || ingredient15 == null){
                     ingr15CardView.visibility = View.GONE
                 }
 
