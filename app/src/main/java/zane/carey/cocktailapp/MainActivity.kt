@@ -59,26 +59,42 @@ class MainActivity : AppCompatActivity() {
         }
 
         //BROWSE ON CLICK
-        browseBtn.setOnClickListener{
+        browseBtn.setOnClickListener {
             //launch classics activity
             val intent = Intent(this, ClassicsActivity::class.java)
             startActivity(intent)
         }
 
         //RANDOM ONCLICK
-        randBtn.setOnClickListener{
+        randBtn.setOnClickListener {
 
             //get random cocktail
             val intent = Intent(this, DrinkDisplayActivity::class.java)
-            intent.putExtra("drinkName", "randomDrink" )
+            intent.putExtra("drinkName", "randomDrink")
             startActivity(intent)
         }
-    }
 
+        //INGREDIENT ONCLICK
+        ingrBtn.setOnClickListener {
+            //launch alert dialog
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Enter Ingredient")
 
-    fun View.hideKeyboard() {
-        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(windowToken, 0)
+            val editText = EditText(this)
+
+            builder.setView(editText)
+
+            builder.setPositiveButton("Ok") { dialog, which ->
+
+                val ingredient = editText.text.toString()
+                //launch display activity
+                val intent = Intent(this, IngredientFilterDisplay::class.java)
+                intent.putExtra("ingredient", ingredient)
+                startActivity(intent)
+            }
+            val dialog = builder.create()
+            dialog.show()
+        }
     }
 }
 

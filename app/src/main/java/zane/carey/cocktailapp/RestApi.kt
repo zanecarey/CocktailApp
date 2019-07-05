@@ -10,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RestApi{
     private val cocktailApi: CocktailApi
     private val randomApi: RandomApi
+    private val ingredientApi: IngredientApi
 
     init {
         val retrofit = Retrofit.Builder()
@@ -20,6 +21,7 @@ class RestApi{
 
         cocktailApi = retrofit.create(CocktailApi::class.java)
         randomApi = retrofit.create(RandomApi::class.java)
+        ingredientApi = retrofit.create(IngredientApi::class.java)
     }
 
     fun getDrinks(drink: String) : Deferred<Results>{
@@ -30,4 +32,7 @@ class RestApi{
         return randomApi.getRandom()
     }
 
+    fun getIngredientResults(ingredient: String) : Deferred<Results>{
+        return ingredientApi.getIngredient(ingredient)
+    }
 }
