@@ -30,31 +30,31 @@ data class Results(
 
 data class Drinks(
     @SerializedName("idDrink")
-    val idDrink: Int,
+    val idDrink: Int?,
     @SerializedName("strDrink")
     val strDrink: String,
     @SerializedName("strGlass")
-    val strGlass: String,
+    val strGlass: String?,
     @SerializedName("strCategory")
-    val strCategory: String,
+    val strCategory: String?,
     @SerializedName("strInstructions")
-    val strInstructions: String,
+    val strInstructions: String?,
     @SerializedName("strDrinkThumb")
     val strDrinkThumb: String,
     @SerializedName("strIngredient1")
-    val strIngredient1: String,
+    val strIngredient1: String?,
     @SerializedName("strIngredient2")
-    val strIngredient2: String,
+    val strIngredient2: String?,
     @SerializedName("strIngredient3")
-    val strIngredient3: String,
+    val strIngredient3: String?,
     @SerializedName("strIngredient4")
-    val strIngredient4: String,
+    val strIngredient4: String?,
     @SerializedName("strIngredient5")
-    val strIngredient5: String,
+    val strIngredient5: String?,
     @SerializedName("strIngredient6")
-    val strIngredient6: String,
+    val strIngredient6: String?,
     @SerializedName("strIngredient7")
-    val strIngredient7: String,
+    val strIngredient7: String?,
     @SerializedName("strIngredient8")
     val strIngredient8: String?,
     @SerializedName("strIngredient9")
@@ -72,19 +72,19 @@ data class Drinks(
     @SerializedName("strIngredient15")
     val strIngredient15: String?,
     @SerializedName("strMeasure1")
-    val strMeasure1: String,
+    val strMeasure1: String?,
     @SerializedName("strMeasure2")
-    val strMeasure2: String,
+    val strMeasure2: String?,
     @SerializedName("strMeasure3")
-    val strMeasure3: String,
+    val strMeasure3: String?,
     @SerializedName("strMeasure4")
-    val strMeasure4: String,
+    val strMeasure4: String?,
     @SerializedName("strMeasure5")
-    val strMeasure5: String,
+    val strMeasure5: String?,
     @SerializedName("strMeasure6")
-    val strMeasure6: String,
+    val strMeasure6: String?,
     @SerializedName("strMeasure7")
-    val strMeasure7: String,
+    val strMeasure7: String?,
     @SerializedName("strMeasure8")
     val strMeasure8: String?,
     @SerializedName("strMeasure9")

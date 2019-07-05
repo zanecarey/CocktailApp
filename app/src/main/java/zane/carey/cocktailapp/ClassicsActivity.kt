@@ -54,9 +54,6 @@ class ClassicsActivity : AppCompatActivity() {
         nonAlcoholicDrinks.add(Drink("Tomato Tang", "https://www.thecocktaildb.com/images/media/drink/869qr81487603278.jpg"))
 
 
-
-
-
         adapter = DrinkAdapter(drinks, this)
         adapterNonAlcohol = DrinkAdapter(nonAlcoholicDrinks, this)
         recyclerView.adapter = adapter
