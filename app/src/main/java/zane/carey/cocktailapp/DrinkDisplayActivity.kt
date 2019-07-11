@@ -15,6 +15,8 @@ import org.w3c.dom.Text
 lateinit var drink: String
 lateinit var instructionsTextView: TextView
 lateinit var drinkImage: ImageView
+lateinit var glassType: TextView
+lateinit var category: TextView
 lateinit var drinkNameTextView: TextView
 lateinit var ing1: TextView
 lateinit var ing2: TextView
@@ -88,6 +90,8 @@ class DrinkDisplayActivity : AppCompatActivity() {
         instructionsTextView = findViewById(R.id.instructions)
         drinkImage = findViewById(R.id.drinkImage)
         drinkNameTextView = findViewById(R.id.drinkName_textView)
+        glassType = findViewById(R.id.glass)
+        category = findViewById(R.id.category)
 
         ing1 = findViewById(R.id.ingredient1)
         ing2 = findViewById(R.id.ingredient2)
@@ -187,6 +191,10 @@ class DrinkDisplayActivity : AppCompatActivity() {
                     .into(drinkImage)
 
                 drinkNameTextView.text = response.strDrink
+
+                glassType.text = response.strGlass
+
+                category.text = response.strCategory
 
                 if(ingredient1 == ""){
                     ingr1CardView.visibility = View.GONE
