@@ -25,7 +25,7 @@ interface IngredientApi {
 
 data class Results(
     @SerializedName("drinks")
-    val drinks: List<Drinks>
+    val drinks: List<Drinks>?
 )
 
 data class Drinks(

@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import kotlinx.coroutines.*
-import okhttp3.Dispatcher
+
 
 lateinit var ingredient: String
-lateinit var filterRecyclerView: RecyclerView
-lateinit var filterAdapter: DrinkAdapter
+private lateinit var filterRecyclerView: RecyclerView
+private lateinit var filterAdapter: DrinkAdapter
 private var filterDrinks = ArrayList<Drink>()
 
 class IngredientFilterDisplay : AppCompatActivity() {
@@ -17,7 +17,7 @@ class IngredientFilterDisplay : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingredient_filter_display)
 
-        filterRecyclerView = findViewById(R.id.filterRecyclerView) as RecyclerView
+        filterRecyclerView = findViewById(R.id.filterRecyclerView)
 
         ingredient = getIngredient()
 
@@ -37,7 +37,7 @@ class IngredientFilterDisplay : AppCompatActivity() {
 
             val request = api.getIngredientResults(ingredient).await()
 
-            for(i in 0..request.drinks.size-1){
+            for(i in 0..request.drinks!!.size-1){
                 filterDrinks.add(Drink(request.drinks[i].strDrink, replace(request.drinks[i].strDrinkThumb)))
             }
             withContext(Dispatchers.Main) {
@@ -54,6 +54,12 @@ class IngredientFilterDisplay : AppCompatActivity() {
 
     fun replace(drink: String) : String{
         return drink.replace("\\", "")
+    }
+
+    override fun onBackPressed() {
+        filterDrinks.clear()
+        filterAdapter.notifyDataSetChanged()
+        super.onBackPressed()
     }
 }
 
