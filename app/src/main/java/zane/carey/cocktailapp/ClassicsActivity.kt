@@ -15,7 +15,10 @@ private lateinit var adapterNonAlcohol: DrinkAdapter
 private var drinks = ArrayList<Drink>()
 private var nonAlcoholicDrinks = ArrayList<Drink>()
 
-
+/*
+* ClassicsActivity - This activity displays many of the most classic cocktails using
+* a recycler view
+* */
 class ClassicsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

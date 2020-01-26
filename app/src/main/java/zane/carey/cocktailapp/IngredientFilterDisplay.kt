@@ -12,6 +12,11 @@ private lateinit var filterRecyclerView: RecyclerView
 private lateinit var filterAdapter: DrinkAdapter
 private var filterDrinks = ArrayList<Drink>()
 
+/*
+* IngredientFilterDisplay - This activity displays the drinks that can be made using the
+* ingredient that the user inputted, giving the user a way to know what cocktails they can
+* create
+*/
 class IngredientFilterDisplay : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

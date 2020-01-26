@@ -82,6 +82,10 @@ var measure15: String? = ""
 
 val api = RestApi()
 
+/*
+* DrinkDisplayActivity - This activity displays all the info about the chosen drink
+* including ingredients, instructions, category, etc.
+*/
 class DrinkDisplayActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
